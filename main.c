@@ -23,7 +23,10 @@ void __attribute__((interrupt, auto_psv)) _AD1Interrupt() {
 
 void initPic24(void) {
     //initializing A/D converter
-    AD1PCFG = 0x0000; //setting all to analog for now, will change later
+    AD1PCFG = 0x9fff; //all digital
+    AD1PCFGbits.PCFG2 = 0; //set AN2 to analog (leave AN0 and AN1 for possible analog reference)
+    AD1CHSbits.CH0SA = 0b00010; //set AN2 to positive input
+    AD1CHSbits.CH0NA = 0b000; //leave negative input as V_REFL
     AD1CON2bits.VCFG = 0b000; //setting voltage reference to be V_DD and V_SS on chip for now
     AD1CON3bits.ADCS = 0x00; //setting AD Conversion Clock to = TCY, but this is where prescaler is set
     AD1CON1bits.SSRC = 0b0111; //set so setting the SAMP starts sampling, and an internal counter ends sampling and starts conversion
