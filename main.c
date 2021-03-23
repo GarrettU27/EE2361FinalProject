@@ -27,7 +27,7 @@ void initPic24(void) {
     AD1PCFGbits.PCFG2 = 0; //set AN2 to analog (leave AN0 and AN1 for possible analog reference)
     AD1CHSbits.CH0SA = 0b00010; //set AN2 to positive input
     AD1CHSbits.CH0NA = 0b000; //leave negative input as V_REFL
-    AD1CON2bits.VCFG = 0b000; //setting voltage reference to be V_DD and V_SS on chip for now
+    AD1CON2bits.VCFG = 0b000; //setting voltage reference to be V_DD and V_SS on chip for now, the output of the amp is a max of 2V and as it says it can easily be used with an ADC of 3.3V which this would be
     AD1CON3bits.ADCS = 0x00; //setting AD Conversion Clock to = TCY, but this is where prescaler is set
     AD1CON1bits.SSRC = 0b0111; //set so setting the SAMP starts sampling, and an internal counter ends sampling and starts conversion
     AD1CON3bits.SAMC = 0b11111; //this will determine how long we sample for currently. Set to 31 T_AD (ADC clock cycle, which is set equal to the internal clock cycle at the moment) at the moment
