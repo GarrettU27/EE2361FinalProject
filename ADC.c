@@ -14,8 +14,7 @@ void initADC(void) {
     AD1CON2bits.SMPI = 0b0000; //how often a sample/convert should fire, current set for each sample/convert sequence
     //this also determines how many buffers are written to, the buffers are only written to right BEFORE the interrupt is called, and they are all written together. So if this is set to call an interrupt every 8th completion, 8 buffers will be written to.
     AD1CON1bits.ASAM = 1; //automatic sampling, which will be continuous
-    AD1CON1bits.ADON = 1; //turn on A/D Converter
-
     _AD1IF = 0; //clear interrupt bit
     //this is where priiority of A/D would be set
+    AD1CON1bits.ADON = 1; //turn on A/D Converter
 }
