@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=
+SOURCEFILES_QUOTED_IF_SPACED=main.c iLED.c iLEDSource.s
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=
-POSSIBLE_DEPFILES=
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/iLED.o.d ${OBJECTDIR}/iLEDSource.o.d
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o
 
 # Source Files
-SOURCEFILES=
+SOURCEFILES=main.c iLED.c iLEDSource.s
 
 
 
@@ -95,13 +95,49 @@ MP_LINKER_FILE_OPTION=,--script=p24FJ64GA002.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/main.o: main.c  .generated_files/b438dcb4047da2b6f9a388a44d93555bc1260790.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/iLED.o: iLED.c  .generated_files/9269b667d3ff7a2dc590278633a86f120e52812a.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/iLED.o.d 
+	@${RM} ${OBJECTDIR}/iLED.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  iLED.c  -o ${OBJECTDIR}/iLED.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/iLED.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
+${OBJECTDIR}/main.o: main.c  .generated_files/7c0d1f5154f397333d7829466594e58d82a32fda.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/iLED.o: iLED.c  .generated_files/c6f969e0c69e93f43394aa2b1d8158d79f4a7168.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/iLED.o.d 
+	@${RM} ${OBJECTDIR}/iLED.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  iLED.c  -o ${OBJECTDIR}/iLED.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/iLED.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 endif
 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/iLEDSource.o: iLEDSource.s  .generated_files/fcf429a006a3ad731c5412cc0bf8292f3764b73f.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/iLEDSource.o.d 
+	@${RM} ${OBJECTDIR}/iLEDSource.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  iLEDSource.s  -o ${OBJECTDIR}/iLEDSource.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/iLEDSource.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	
 else
+${OBJECTDIR}/iLEDSource.o: iLEDSource.s  .generated_files/9a58d4dd2887c4703e5562ad99db257ace2fc06c.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/iLEDSource.o.d 
+	@${RM} ${OBJECTDIR}/iLEDSource.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  iLEDSource.s  -o ${OBJECTDIR}/iLEDSource.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/iLEDSource.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	
 endif
 
 # ------------------------------------------------------------------------------------

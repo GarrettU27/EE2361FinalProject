@@ -12,6 +12,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>main.c</itemPath>
+      <itemPath>iLED.h</itemPath>
+      <itemPath>iLED.c</itemPath>
+      <itemPath>iLEDSource.s</itemPath>
+      <itemPath>iLEDSource.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -19,6 +24,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
