@@ -10,7 +10,7 @@ void initADC(void) {
     AD1CON3bits.ADCS = 0x00; //setting AD Conversion Clock to = TCY, but this is where prescaler is set
     AD1CON1bits.SSRC = 0b0111; //set so setting the SAMP starts sampling, and an internal counter ends sampling and starts conversion
     AD1CON3bits.SAMC = 0b11111; //this will determine how long we sample for currently. Set to 31 T_AD (ADC clock cycle, which is set equal to the internal clock cycle at the moment) at the moment
-    AD1CON1bits.FORM = 0b01; //how the output is given. currently set to give an integer
+    AD1CON1bits.FORM = 0b00; //how the output is given. currently set to give an unsigned integer
     AD1CON2bits.SMPI = 0b0000; //how often a sample/convert should fire, current set for each sample/convert sequence
     //this also determines how many buffers are written to, the buffers are only written to right BEFORE the interrupt is called, and they are all written together. So if this is set to call an interrupt every 8th completion, 8 buffers will be written to.
     AD1CON1bits.ASAM = 1; //automatic sampling, which will be continuous

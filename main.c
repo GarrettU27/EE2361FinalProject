@@ -19,7 +19,8 @@
 //this interrupt will be called after each sample/conversion completes
 void __attribute__((interrupt, auto_psv)) _AD1Interrupt() {
     _AD1IF = 0;
-    int result = ADC1BUF0; //this will capture the input
+    unsigned int result = ADC1BUF0; //this will capture the input
+    writeColor(result % 2047, 0, 2047 % result);
 }
 
 void initPic24(void) {
