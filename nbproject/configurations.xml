@@ -17,6 +17,8 @@
       <itemPath>iLED.c</itemPath>
       <itemPath>iLEDSource.s</itemPath>
       <itemPath>iLEDSource.h</itemPath>
+      <itemPath>ADC.c</itemPath>
+      <itemPath>ADC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

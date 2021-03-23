@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c iLED.c iLEDSource.s
+SOURCEFILES_QUOTED_IF_SPACED=main.c iLED.c iLEDSource.s ADC.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/iLED.o.d ${OBJECTDIR}/iLEDSource.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o ${OBJECTDIR}/ADC.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/iLED.o.d ${OBJECTDIR}/iLEDSource.o.d ${OBJECTDIR}/ADC.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o ${OBJECTDIR}/ADC.o
 
 # Source Files
-SOURCEFILES=main.c iLED.c iLEDSource.s
+SOURCEFILES=main.c iLED.c iLEDSource.s ADC.c
 
 
 
@@ -107,6 +107,12 @@ ${OBJECTDIR}/iLED.o: iLED.c  .generated_files/9269b667d3ff7a2dc590278633a86f120e
 	@${RM} ${OBJECTDIR}/iLED.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  iLED.c  -o ${OBJECTDIR}/iLED.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/iLED.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/ADC.o: ADC.c  .generated_files/addc4807e55237c6cce44eb6b28164d39911bacb.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ADC.o.d 
+	@${RM} ${OBJECTDIR}/ADC.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  ADC.c  -o ${OBJECTDIR}/ADC.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/ADC.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/7c0d1f5154f397333d7829466594e58d82a32fda.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
 	@${MKDIR} "${OBJECTDIR}" 
@@ -119,6 +125,12 @@ ${OBJECTDIR}/iLED.o: iLED.c  .generated_files/c6f969e0c69e93f43394aa2b1d8158d79f
 	@${RM} ${OBJECTDIR}/iLED.o.d 
 	@${RM} ${OBJECTDIR}/iLED.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  iLED.c  -o ${OBJECTDIR}/iLED.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/iLED.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/ADC.o: ADC.c  .generated_files/249ca903731af96ade2f52b370261a5d2498ceff.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ADC.o.d 
+	@${RM} ${OBJECTDIR}/ADC.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  ADC.c  -o ${OBJECTDIR}/ADC.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/ADC.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 
