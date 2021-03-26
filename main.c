@@ -20,10 +20,11 @@
 void __attribute__((interrupt, auto_psv)) _AD1Interrupt() {
     _AD1IF = 0;
     unsigned int result = ADC1BUF0; //this will capture the input
-    writeColor(result % 2047, 0, 2047 % result);
+    writeColor(result % 1024, 0, 1024 % result);
 }
 
 void initPic24(void) {
+    _RCDIV = 0;
     AD1PCFG = 0x9fff; //all digital
 }
 
