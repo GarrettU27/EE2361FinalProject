@@ -8,4 +8,5 @@ Docs of Chip within Microphone Amplifier: https://cdn-shop.adafruit.com/datashee
 
 RGB iLED: https://www.adafruit.com/product/1734
 
-ADC Conversion of PIC24 Docs: https://ww1.microchip.com/downloads/en/DeviceDoc/60001359b.pdf
+ADC Conversion of PIC24 Docs: ~https://ww1.microchip.com/downloads/en/DeviceDoc/60001359b.pdf~
+http://ww1.microchip.com/downloads/en/devicedoc/39705b.pdf (New link is for PIC24)
