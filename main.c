@@ -16,18 +16,17 @@
                                        // Fail-Safe Clock Monitor is enabled)
 #pragma config FNOSC = FRCPLL      // Oscillator Select (Fast RC Oscillator with PLL module (FRCPLL))
 
-volatile unsigned int result;
-
 //this interrupt will be called after each sample/conversion completes
 void __attribute__((interrupt, auto_psv)) _ADC1Interrupt() {
     _AD1IF = 0;
-    result = ADC1BUF0; //this will capture the input
+    putVal(ADC1BUF0); //this will capture the input
 }
 
 //ADC has higher priority than timer, so this should not be an issue
 void __attribute__((interrupt, auto_psv)) _T1Interrupt() {
-    volatile unsigned int write = (result-360)*5;
-    writeColor(write, 0, 255);
+    _T1IF = 0;
+    volatile float write = ((255/0.04)*(3.3/1024)*getAvg())-120;//((255/0.04)*(3.3/1024)*result)-160;
+    writeColor((int)write, 0, 0);
 }
 
 void initPic24(void) {

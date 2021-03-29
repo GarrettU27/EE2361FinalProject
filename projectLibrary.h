@@ -1,7 +1,8 @@
 #include "iLED.h"
 #include "ADC.h"
+#include "circular_buffer.h"
 
-/* 
+/*
  * File:   projectLibrary.h
  * Author: garre
  *

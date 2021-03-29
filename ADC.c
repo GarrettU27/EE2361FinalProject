@@ -49,7 +49,7 @@ void initADC(void) {
     T2CONbits.T32 = 0; //I only need a 16 bit timer on timer3
     T3CONbits.TON = 0;
     T3CONbits.TCKPS = 0b10; //1:64 prescaler
-    PR3 = 15624; //(1/16)/(62.5*10^-9*64)-1 so 1/16 of a second for sample and conversion
+    PR3 = 489; //15624; //(1/16)/(62.5*10^-9*64)-1 so 1/16 of a second for sample and conversion
     T3CONbits.TON = 1;
 
     AD1CON1bits.ADON = 1; //turn on A/D Converter
