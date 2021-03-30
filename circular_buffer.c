@@ -1,6 +1,6 @@
 #include "circular_buffer.h"
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 128
 
 int avg = 0;
 int tail = 0;
@@ -22,6 +22,7 @@ int getAvg() {
 
 void putVal(int newValue) {
     //remove old value, add in new value and update the average
+//    if (buffer[tail] > 1.5*(avg+1)) return;
     sum -= buffer[tail];
     sum += newValue;
     avg = sum/BUFFER_SIZE;

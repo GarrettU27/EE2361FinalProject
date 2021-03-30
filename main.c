@@ -1,5 +1,6 @@
 #include "xc.h"
 #include "projectLibrary.h"
+#include "stdlib.h"
 
 // CW1: FLASH CONFIGURATION WORD 1 (see PIC24 Family Reference Manual 24.1)
 #pragma config ICS = PGx1          // Comm Channel Select (Emulator EMUC1/EMUD1 pins are shared with PGC1/PGD1)
@@ -25,7 +26,8 @@ void __attribute__((interrupt, auto_psv)) _ADC1Interrupt() {
 //ADC has higher priority than timer, so this should not be an issue
 void __attribute__((interrupt, auto_psv)) _T1Interrupt() {
     _T1IF = 0;
-    volatile float write = ((255/0.04)*(3.3/1024)*getAvg())-120;//((255/0.04)*(3.3/1024)*result)-160;
+//    volatile float write = ((255/1.23)*(3.3/1024)*getAvg())-(255/1.23)*1.22; //120;//((255/0.04)*(3.3/1024)*result)-160;
+    volatile float write = abs((255/0.01)*((3.3/1024)*getAvg()-1.2246));
     writeColor((int)write, 0, 0);
 }
 
