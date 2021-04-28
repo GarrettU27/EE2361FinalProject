@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c iLED.c iLEDSource.s ADC.c circular_buffer.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c iLED.c iLEDSource.s ADC.c circular_buffer.c DFT.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/circular_buffer.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/iLED.o.d ${OBJECTDIR}/iLEDSource.o.d ${OBJECTDIR}/ADC.o.d ${OBJECTDIR}/circular_buffer.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/circular_buffer.o ${OBJECTDIR}/DFT.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/iLED.o.d ${OBJECTDIR}/iLEDSource.o.d ${OBJECTDIR}/ADC.o.d ${OBJECTDIR}/circular_buffer.o.d ${OBJECTDIR}/DFT.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/circular_buffer.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/iLED.o ${OBJECTDIR}/iLEDSource.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/circular_buffer.o ${OBJECTDIR}/DFT.o
 
 # Source Files
-SOURCEFILES=main.c iLED.c iLEDSource.s ADC.c circular_buffer.c
+SOURCEFILES=main.c iLED.c iLEDSource.s ADC.c circular_buffer.c DFT.c
 
 
 
@@ -119,6 +119,12 @@ ${OBJECTDIR}/circular_buffer.o: circular_buffer.c  .generated_files/6d661c6d73e6
 	@${RM} ${OBJECTDIR}/circular_buffer.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  circular_buffer.c  -o ${OBJECTDIR}/circular_buffer.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/circular_buffer.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/DFT.o: DFT.c  .generated_files/ad282d9346cf94e6c765c03c3e40b583e29f7aef.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/DFT.o.d 
+	@${RM} ${OBJECTDIR}/DFT.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  DFT.c  -o ${OBJECTDIR}/DFT.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/DFT.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/4d24a8b07ef2b741d7ec54c8f928febeb844fddf.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
 	@${MKDIR} "${OBJECTDIR}" 
@@ -143,6 +149,12 @@ ${OBJECTDIR}/circular_buffer.o: circular_buffer.c  .generated_files/aafbf8e18a8b
 	@${RM} ${OBJECTDIR}/circular_buffer.o.d 
 	@${RM} ${OBJECTDIR}/circular_buffer.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  circular_buffer.c  -o ${OBJECTDIR}/circular_buffer.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/circular_buffer.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/DFT.o: DFT.c  .generated_files/3ffa69d3cef76ecc6e2daf03d0b095a13756ce3a.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/DFT.o.d 
+	@${RM} ${OBJECTDIR}/DFT.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  DFT.c  -o ${OBJECTDIR}/DFT.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/DFT.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

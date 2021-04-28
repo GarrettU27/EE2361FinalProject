@@ -22,6 +22,8 @@
       <itemPath>projectLibrary.h</itemPath>
       <itemPath>circular_buffer.c</itemPath>
       <itemPath>circular_buffer.h</itemPath>
+      <itemPath>DFT.c</itemPath>
+      <itemPath>DFT.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
